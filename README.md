@@ -1,6 +1,10 @@
 # editorjs-components
 A collection of editorJS components
 
+### Components
+* Accordion (implemented)
+
+
 
 ## Build Scripts
 1. `npm run build:dev` - for the local development
