@@ -14,12 +14,6 @@ export default class Accordion {
   constructor({ data }) {
     this.data = data;
     this.wrapper = null;
-    this.view = {};
-    this._buildView();
-  }
-
-  _buildView() {
-    // this.view.form = htmlToJs(toForm());
   }
 
   render() {
