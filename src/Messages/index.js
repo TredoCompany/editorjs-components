@@ -20,25 +20,25 @@ export default class Message {
     this.data = {
       title: data.title || "",
       content: data.content || "",
-      typeInfo: data.typeInfo !== undefined ? data.typeInfo : false,
-      withBackground:
-        data.withBackground !== undefined ? data.withBackground : false,
-      stretched: data.stretched !== undefined ? data.stretched : false,
+      typeInfo: data.typeInfo || "",
+      // withBackground:
+      //   data.withBackground !== undefined ? data.withBackground : false,
+      // stretched: data.stretched !== undefined ? data.stretched : false,
     };
 
     // добавляем кнопки для выбора типа сообщения
     this.settings = [
       {
-        name: "typeInfo",
+        name: "info",
         icon: `<svg width="16" height="16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info" class="svg-inline--fa fa-info fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"></path></svg>`,
       },
       {
-        name: "stretched",
-        icon: `<svg width="17" height="10" viewBox="0 0 17 10" xmlns="http://www.w3.org/2000/svg"><path d="M13.568 5.925H4.056l1.703 1.703a1.125 1.125 0 0 1-1.59 1.591L.962 6.014A1.069 1.069 0 0 1 .588 4.26L4.38.469a1.069 1.069 0 0 1 1.512 1.511L4.084 3.787h9.606l-1.85-1.85a1.069 1.069 0 1 1 1.512-1.51l3.792 3.791a1.069 1.069 0 0 1-.475 1.788L13.514 9.16a1.125 1.125 0 0 1-1.59-1.591l1.644-1.644z"/></svg>`,
+        name: "warning",
+        icon: `<svg width="16" height="16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="exclamation-circle" class="svg-inline--fa fa-exclamation-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"></path></svg>`,
       },
       {
-        name: "withBackground",
-        icon: `<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.043 8.265l3.183-3.183h-2.924L4.75 10.636v2.923l4.15-4.15v2.351l-2.158 2.159H8.9v2.137H4.7c-1.215 0-2.2-.936-2.2-2.09v-8.93c0-1.154.985-2.09 2.2-2.09h10.663l.033-.033.034.034c1.178.04 2.12.96 2.12 2.089v3.23H15.3V5.359l-2.906 2.906h-2.35zM7.951 5.082H4.75v3.201l3.201-3.2zm5.099 7.078v3.04h4.15v-3.04h-4.15zm-1.1-2.137h6.35c.635 0 1.15.489 1.15 1.092v5.13c0 .603-.515 1.092-1.15 1.092h-6.35c-.635 0-1.15-.489-1.15-1.092v-5.13c0-.603.515-1.092 1.15-1.092z"/></svg>`,
+        name: "success",
+        icon: `<svg width="16" height="16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle" class="svg-inline--fa fa-check-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>`,
       },
     ];
   }
@@ -50,16 +50,16 @@ export default class Message {
     // список кнопок
     const settings = [
       {
-        name: "typeInfo",
+        name: "info",
         icon: `<svg width="16" height="16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info" class="svg-inline--fa fa-info fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"></path></svg>`,
       },
       {
-        name: "stretched",
-        icon: `<svg width="17" height="10" viewBox="0 0 17 10" xmlns="http://www.w3.org/2000/svg"><path d="M13.568 5.925H4.056l1.703 1.703a1.125 1.125 0 0 1-1.59 1.591L.962 6.014A1.069 1.069 0 0 1 .588 4.26L4.38.469a1.069 1.069 0 0 1 1.512 1.511L4.084 3.787h9.606l-1.85-1.85a1.069 1.069 0 1 1 1.512-1.51l3.792 3.791a1.069 1.069 0 0 1-.475 1.788L13.514 9.16a1.125 1.125 0 0 1-1.59-1.591l1.644-1.644z"/></svg>`,
+        name: "warning",
+        icon: `<svg width="16" height="16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="exclamation-circle" class="svg-inline--fa fa-exclamation-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"></path></svg>`,
       },
       {
-        name: "withBackground",
-        icon: `<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.043 8.265l3.183-3.183h-2.924L4.75 10.636v2.923l4.15-4.15v2.351l-2.158 2.159H8.9v2.137H4.7c-1.215 0-2.2-.936-2.2-2.09v-8.93c0-1.154.985-2.09 2.2-2.09h10.663l.033-.033.034.034c1.178.04 2.12.96 2.12 2.089v3.23H15.3V5.359l-2.906 2.906h-2.35zM7.951 5.082H4.75v3.201l3.201-3.2zm5.099 7.078v3.04h4.15v-3.04h-4.15zm-1.1-2.137h6.35c.635 0 1.15.489 1.15 1.092v5.13c0 .603-.515 1.092-1.15 1.092h-6.35c-.635 0-1.15-.489-1.15-1.092v-5.13c0-.603.515-1.092 1.15-1.092z"/></svg>`,
+        name: "success",
+        icon: `<svg width="16" height="16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle" class="svg-inline--fa fa-check-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>`,
       },
     ];
     // обертка для списка кнопок
@@ -75,20 +75,11 @@ export default class Message {
       button.addEventListener("click", () => {
         this._toggleTune(tune.name);
         button.classList.toggle("cdx-settings-button--active");
+        // console.log("tune name", tune.name);
       });
     });
 
     return wrapper;
-  }
-
-  /**
-   * @private
-   * Click on the Settings Button
-   * @param {string} tune — tune name from this.settings
-   */
-  _toggleTune(tune) {
-    this.data[tune] = !this.data[tune];
-    console.log("Image tune clicked", tune, this.data);
   }
 
   render() {
@@ -102,7 +93,11 @@ export default class Message {
     const $form = this.wrapper.querySelector("form");
     if (this.data.title && this.data.content) {
       $form.style.display = "none";
-      const message = this._createMessage(this.data.title, this.data.content);
+      const message = this._createMessage(
+        this.data.title,
+        this.data.content,
+        this.data.typeInfo
+      );
       this.wrapper.appendChild(message);
     }
 
@@ -114,7 +109,11 @@ export default class Message {
 
       $form.style.display = "none";
 
-      const message = this._createMessage($title.value, $content.value);
+      const message = this._createMessage(
+        $title.value,
+        $content.value,
+        this.data.typeInfo
+      );
       this.wrapper.appendChild(message);
     });
 
@@ -123,7 +122,7 @@ export default class Message {
 
   save(blockContent) {
     // blockContent - весь отрендеренный блок
-    // console.log("block content ", blockContent);
+    console.log("block content ", blockContent);
     // находим введенный заголовок
     const $label = blockContent.querySelector(
       ".messages-wrapper > .message > .header"
@@ -142,7 +141,7 @@ export default class Message {
   }
 
   validate(savedData) {
-    console.log("validate savedData", savedData);
+    // console.log("validate savedData", savedData);
     if (!savedData.title.trim()) {
       return false;
     }
@@ -153,9 +152,10 @@ export default class Message {
     return true;
   }
 
-  _createMessage(title, content) {
-    console.log("create message ", title, content);
-    const message = htmlToJs(toMessage(title, content));
+  _createMessage(title, content, currentClass) {
+    // console.log("create message ", title, content);
+    // Вызываем метод htmlToJs - для рендера html из шаблона (шаблон toMessage, с передачей параметов)
+    const message = htmlToJs(toMessage(title, content, currentClass));
     // message
     //   .querySelector("div.messages-wrapper > .message > .header")
     //   .querySelector("div.messages-wrapper > .message > p");
@@ -164,5 +164,33 @@ export default class Message {
     //   target.nextElementSibling?.classList.toggle("active");
     // });
     return message;
+  }
+
+  /**
+   * @private
+   * Click on the Settings Button
+   * @param {string} tune — tune name from this.settings
+   * При клике добавить название кнопки в тип this.data.typeInfo
+   */
+  _toggleTune(tune) {
+    this.data.typeInfo = tune;
+    console.log("on click tune is", tune, this.data);
+
+    let currentLabel = this.wrapper.querySelector(
+      ".messages-wrapper > .message > .header"
+    );
+    let currentContent = this.wrapper.querySelector(
+      ".messages-wrapper > .message > p"
+    );
+
+    const message = this._createMessage(
+      currentLabel.innerHTML,
+      currentContent.innerHTML,
+      this.data.typeInfo
+    );
+    this.wrapper.innerHTML = "";
+    this.wrapper.appendChild(message);
+
+    // console.log("Image tune clicked", tune, this.data);
   }
 }

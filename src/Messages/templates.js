@@ -15,9 +15,13 @@ export const toForm = function (label = "", content = "") {
   `;
 };
 
-export const toMessage = function (label = "", content = "") {
+export const toMessage = function (
+  label = "",
+  content = "",
+  currentClass = ""
+) {
   return `
-  <div class="ui message">
+  <div class="ui message ${currentClass}">
       <div class="header">${label}</div>
       <p>${content}</p>
     </div>
