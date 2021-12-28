@@ -1,6 +1,6 @@
 {
   "name": "@tredo/editorjs-components",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A collection of components for editorjs",
   "main": "./dist/bundle.js",
   "scripts": {
