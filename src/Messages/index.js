@@ -122,7 +122,7 @@ export default class Message {
 
   save(blockContent) {
     // blockContent - весь отрендеренный блок
-    console.log("block content ", blockContent);
+    // console.log("block content ", blockContent);
     // находим введенный заголовок
     const $label = blockContent.querySelector(
       ".messages-wrapper > .message > .header"
@@ -174,7 +174,7 @@ export default class Message {
    */
   _toggleTune(tune) {
     this.data.typeInfo = tune;
-    console.log("on click tune is", tune, this.data);
+    // console.log("on click tune is", tune, this.data);
 
     let currentLabel = this.wrapper.querySelector(
       ".messages-wrapper > .message > .header"

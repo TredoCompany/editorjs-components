@@ -60,7 +60,7 @@ export default class Accordion {
   }
 
   validate(savedData) {
-    console.log("validate savedData", savedData);
+    // console.log("validate savedData", savedData);
     if (!savedData.title.trim()) {
       return false;
     }
