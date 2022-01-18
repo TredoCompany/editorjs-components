@@ -7,6 +7,11 @@ A collection of editorJS components
 - Accordion (implemented)
 - Messages
 
+### After adding components
+
+- Add it to demo-editorJs/src/index.js
+- Use prefix kaznu in camelCase for type of new component
+
 ## Build Scripts
 
 1. `npm run build:dev` - for the local development
